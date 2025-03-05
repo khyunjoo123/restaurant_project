@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>상세페이지</title>
+
+  <style>
+
+    body {
+      margin: 10px;
+      font-family: arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      height: 500px;
+      max-width: 500px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      margin: 20px auto;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .layout {
+      margin: 25px;
+      justify-content: right;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <h1 th:text="${board.title}">제목입니다.</h1>
+  <p th:text="${board.content}">내용입니다.</p>
+  <a th:href="@{/board/delete(id=${board.id})}">삭제</a>
+  <a th:href="@{/board/modify/{id}(id=${board.id})}">수정</a>
+  <a th:href="@{${board.image}}">이미지보기</a>
+</div>
+
+</body>
+</html>

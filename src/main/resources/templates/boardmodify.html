@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글 작성</title>
+
+  <style>
+
+    body {
+      margin: 10px;
+      font-family: arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      height: 500px;
+      max-width: 500px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      margin: 20px auto;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .layout {
+      margin: 25px;
+      justify-content: right;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <form class="layout" th:action="@{/board/update/{id}(id=${board.id})}" method="post">
+    음식점 이름 <input name="title" type="text" th:value="${board.title}">
+    <br><br>
+    내용<textarea name="content" th:text="${board.content}"></textarea>
+    <br><br>
+    <button type="submit">수정</button>
+  </form>
+</div>
+
+</body>
+</html>
