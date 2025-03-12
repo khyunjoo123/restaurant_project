@@ -37,13 +37,12 @@
 <body>
 
 <div class="container">
-  <div class="layout">
-    <table>
-
+    <table class="layout">
       <thead>
       <tr>
         <th>글번호</th>
         <th>제목</th>
+        <th>한줄평</th>
       </tr>
       </thead>
       <tbody>
@@ -51,12 +50,11 @@
         <td th:text="${board.id}">1</td>
         <td>
           <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
+          <a th:text="${board.content}" th:href="@{/board/view(id=${board.id})}"></a>
         </td>
       </tr>
       </tbody>
     </table>
-  </div>
-  </div>
 </div>
 
 </body>
